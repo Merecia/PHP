@@ -1,0 +1,12 @@
+{
+    "name": "aleksandr/weblab-app",
+    "authors": [
+        {
+            "name": "Aleksandr Pisklov",
+            "email": "sasha.pisklov2002@gmail.com"
+        }
+    ],
+    "require": {
+        "aleksandr/weblab-lib": "dev-master"
+    }
+}

@@ -1,0 +1,50 @@
+{
+    "packages": [
+        {
+            "name": "aleksandr/weblab-lib",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Merecia/weblab-lib.git",
+                "reference": "8e7498a3e282d61d4fda95c4c3f739c9a8df5763"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Merecia/weblab-lib/zipball/8e7498a3e282d61d4fda95c4c3f739c9a8df5763",
+                "reference": "8e7498a3e282d61d4fda95c4c3f739c9a8df5763",
+                "shasum": ""
+            },
+            "require-dev": {
+                "overtrue/phplint": "^3.2",
+                "phpunit/phpunit": "^8.5"
+            },
+            "time": "2022-10-21T19:18:33+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Aleksandr\\": "src/App"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksandr Pisklov",
+                    "email": "sasha.pisklov2002@gmail.com"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/Merecia/weblab-lib/issues",
+                "source": "https://github.com/Merecia/weblab-lib/tree/master"
+            },
+            "install-path": "../aleksandr/weblab-lib"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
