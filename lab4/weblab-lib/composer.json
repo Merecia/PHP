@@ -1,0 +1,18 @@
+{
+    "name": "aleksandr/weblab-lib",
+    "authors": [
+        {
+            "name": "Aleksandr Pisklov",
+            "email": "sasha.pisklov2002@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "overtrue/phplint": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Aleksandr\\" : "src/App"
+        }
+    }
+}
