@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Comment
  * @package App\Models
- * @version November 12, 2022, 10:50 pm UTC
+ * @version November 13, 2022, 4:51 am UTC
  *
  * @property \App\Models\User $author
  * @property \App\Models\Article $article
@@ -17,12 +18,15 @@ use Illuminate\Database\Eloquent\Model as Model;
  */
 class Comment extends Model
 {
+    // use SoftDeletes;
 
     public $table = 'comments';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+
+    // protected $dates = ['deleted_at'];
 
 
 
@@ -52,7 +56,9 @@ class Comment extends Model
     public static $rules = [
         'author_id' => 'required',
         'article_id' => 'required',
-        'text' => 'nullable|string'
+        'text' => 'nullable|string',
+        'created_at' => 'nullable',
+        'updated_at' => 'nullable'
     ];
 
     /**

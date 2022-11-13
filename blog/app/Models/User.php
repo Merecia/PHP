@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model as Model;
+use Eloquent as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class User
  * @package App\Models
- * @version November 12, 2022, 10:51 pm UTC
+ * @version November 13, 2022, 4:40 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection $articles
  * @property \Illuminate\Database\Eloquent\Collection $comments
@@ -19,12 +20,15 @@ use Illuminate\Database\Eloquent\Model as Model;
  */
 class User extends Model
 {
+    // use SoftDeletes;
 
     public $table = 'users';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
+
+    // protected $dates = ['deleted_at'];
 
 
 
@@ -60,7 +64,9 @@ class User extends Model
         'email' => 'required|string|max:255',
         'email_verified_at' => 'nullable',
         'password' => 'required|string|max:255',
-        'remember_token' => 'nullable|string|max:100'
+        'remember_token' => 'nullable|string|max:100',
+        'created_at' => 'nullable',
+        'updated_at' => 'nullable'
     ];
 
     /**
