@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCommentRequest;
 use App\Repositories\CommentRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Events\AddingNewComment;
 use Flash;
 use Response;
 
@@ -59,6 +60,12 @@ class CommentController extends AppBaseController
         $comment = $this->commentRepository->create($input);
 
         Flash::success('Comment saved successfully.');
+
+        $author = $comment->author()->get();
+
+        $email_of_author = $author[0]->email;
+
+        event(new AddingNewComment($comment, $email_of_author));
 
         return redirect(route('comments.index'));
     }
