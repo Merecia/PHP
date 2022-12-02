@@ -71,7 +71,7 @@ class CommentController extends AppBaseController
 
         $number_of_comments = DB::table('comments')->get()->count();
 
-        //event(new ChangingNumberOfComments($number_of_comments));
+        event(new ChangingNumberOfComments($number_of_comments));
 
         return redirect(route('comments.index'));
     }

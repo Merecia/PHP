@@ -31,3 +31,16 @@ window.Echo = new Echo({
     encrypted: true,
     forceTLS: true
 });
+
+Pusher.logToConsole = true;
+
+let pusher = new Pusher(
+    process.env.MIX_PUSHER_APP_KEY, {
+        cluster: process.env.MIX_PUSHER_APP_CLUSTER
+    }
+);
+
+var channel = pusher.subscribe('comment');
+channel.bind('created', function (data) {
+    console.log(JSON.stringify(data));
+});

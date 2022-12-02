@@ -10,6 +10,7 @@
           crossorigin="anonymous"/>
 
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/app.css">
 
     @yield('third_party_stylesheets')
 
@@ -36,6 +37,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
+                    
                     <li class="user-header bg-primary">
                         <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
                              class="img-circle elevation-2"
@@ -82,6 +84,7 @@
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+<script src="/js/app.js"></script>
 
 @yield('third_party_scripts')
 

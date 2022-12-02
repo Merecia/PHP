@@ -41963,6 +41963,14 @@ window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   encrypted: true,
   forceTLS: true
 });
+Pusher.logToConsole = true;
+var pusher = new Pusher("383991d7b7fa3ad4185e", {
+  cluster: "mt1"
+});
+var channel = pusher.subscribe('comment');
+channel.bind('created', function (data) {
+  console.log(JSON.stringify(data));
+});
 
 /***/ }),
 
