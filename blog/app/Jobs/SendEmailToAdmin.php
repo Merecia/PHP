@@ -22,7 +22,7 @@ class SendEmailToAdmin implements ShouldQueue
     }
 
     public function handle()
-    {
+    {        
         Mail::to("sasha.pisklov2002@gmail.com")->send(
             new CommentCreateMailToAdmin($this->data)
         );

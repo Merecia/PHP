@@ -7,7 +7,9 @@ use App\Http\Requests\UpdateCommentRequest;
 use App\Repositories\CommentRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Events\AddingNewComment;
+use App\Events\ChangingNumberOfComments;
 use Flash;
 use Response;
 
@@ -66,6 +68,10 @@ class CommentController extends AppBaseController
         $email_of_author = $author[0]->email;
 
         event(new AddingNewComment($comment, $email_of_author));
+
+        $number_of_comments = DB::table('comments')->get()->count();
+
+        //event(new ChangingNumberOfComments($number_of_comments));
 
         return redirect(route('comments.index'));
     }

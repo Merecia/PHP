@@ -10,22 +10,19 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class AddingNewComment
+class ChangingNumberOfComments implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-    
-    public $comment;
-    public $email_of_author;
-    
-    public function __construct($comment, $email_of_author)
-    {
-        $this->comment = $comment;
-        
-        $this->email_of_author = $email_of_author;
-    }
 
+    public $commentsCounter;
+
+    public function __construct($commentsCounter)
+    {
+        $this->commentsCounter = $commentsCounter; 
+    }
+    
     public function broadcastOn()
     {
-        return new Channel('channel-name');
+        return new Channel('broadcast-channel');
     }
 }
